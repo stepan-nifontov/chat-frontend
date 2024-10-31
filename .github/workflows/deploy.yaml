@@ -31,7 +31,7 @@ jobs:
           tags: steve2ekb/my_chat:latest
 
       - name: SSH to VPS
-        uses: appleboy/ssh-action@v0.5.4  # Обновите версию
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USERNAME }}
