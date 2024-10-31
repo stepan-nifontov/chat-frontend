@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: your_dockerhub_username/your_image_name:latest
+          tags: steve2ekb/my_chat:latest
 
       - name: SSH to VPS
         uses: appleboy/ssh-action@v0.1.2
@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            docker pull your_dockerhub_username/your_image_name:latest
+            docker pull steve2ekb/my_chat:latest
             docker stop my-chat-app || true
             docker rm my-chat-app || true
-            docker run -d --name my-chat-app -p 80:80 your_dockerhub_username/your_image_name:latest
+            docker run -d --name my-chat-app -p 80:80 steve2ekb/my_chat:latest
