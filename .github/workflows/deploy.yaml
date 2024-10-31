@@ -39,7 +39,7 @@ jobs:
           port: 22
           debug: true
           script: |
-            docker pull your_dockerhub_username/your_image_name:latest
+            docker pull steve2ekb/my_chat:latest
             docker stop my-chat-app || true
             docker rm my-chat-app || true
             docker run -d --name my-chat-app -p 8080:80 steve2ekb/my_chat:latest
